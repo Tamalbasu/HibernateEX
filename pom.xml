@@ -1,16 +1,15 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>HibernateEX</groupId>
-  <artifactId>HibernateEX</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  
-<properties>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>HibernateEX</groupId>
+	<artifactId>HibernateEX</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<properties>
 		<springframework.version>4.3.0.RELEASE</springframework.version>
 		<hibernate.version>4.3.6.Final</hibernate.version>
 		<mysql.version>5.1.31</mysql.version>
-		<joda-time.version>2.3</joda-time.version>			
+		<joda-time.version>2.3</joda-time.version>
 	</properties>
-
 	<dependencies>
 		<!-- Spring -->
 		<dependency>
@@ -23,6 +22,16 @@
 			<artifactId>spring-web</artifactId>
 			<version>${springframework.version}</version>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/com.oracle/ojdbc14 -->
+<dependency>
+    <groupId>com.oracle</groupId>
+    <artifactId>ojdbc14</artifactId>
+    <version>10.2.0.4.0</version>
+</dependency>
+
+
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -65,18 +74,18 @@
 			<version>${mysql.version}</version>
 		</dependency>
 
-      	<!-- Joda-Time -->		
+		<!-- Joda-Time -->
 		<dependency>
-  			<groupId>joda-time</groupId>
-  			<artifactId>joda-time</artifactId>
-  			<version>${joda-time.version}</version>
-  		</dependency>
-		
-		<!-- To map JodaTime with database type -->  		
-  		<dependency>
-    		<groupId>org.jadira.usertype</groupId>
-    		<artifactId>usertype.core</artifactId>
-    		<version>3.0.0.CR1</version>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>${joda-time.version}</version>
+		</dependency>
+
+		<!-- To map JodaTime with database type -->
+		<dependency>
+			<groupId>org.jadira.usertype</groupId>
+			<artifactId>usertype.core</artifactId>
+			<version>3.0.0.CR1</version>
 		</dependency>
 
 		<!-- Servlet+JSP+JSTL -->
@@ -91,16 +100,16 @@
 			<version>2.3.1</version>
 		</dependency>
 		<dependency>
-		    <groupId>javax.servlet</groupId>
-		    <artifactId>jstl</artifactId>
-		    <version>1.2</version>
-		</dependency>		
-		
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
 	</dependencies>
 
 
 	<build>
-		<finalName>spring-mvc-hibernate-example</finalName>
+		<finalName>hibernate-example</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -120,6 +129,17 @@
 		</plugins>
 	</build>
 
-  
-  
+
+	<repositories>
+		<repository>
+			<id>maven</id>
+			<name>Central</name>
+			<url>http://central.maven.org/maven2/</url>
+			<layout>default</layout>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+			</releases>
+		</repository>
+	</repositories> 
 </project>
